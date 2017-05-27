@@ -45,21 +45,21 @@ for i in range(t.size):
 	p1.angulo=(p1.angulo+np.pi)%(2*np.pi)-np.pi
 	thet[i], omega[i], energy[i]=p1.angulo, p1.w, p1.e
 
-plt.figure(figsize=(6,5), dpi=96)
+plt.figure(figsize=(16,5), dpi=96)
+plt.axis([0,130,-4,14])
 
 ax=plt.gca()
 ax.xaxis.set_ticks_position('bottom')
 ax.yaxis.set_ticks_position('left')
-ax.autoscale()
 
 plt.rc('text', usetex=True)
 plt.rc('font', **{'sans-serif' : 'Arial', 'family' : 'sans-serif'})
-plt.xlabel(r'Posi\c{c}\~{a}o(m)')
-plt.ylabel(r'Velocidade ($\frac{m}{s}$')
+plt.xlabel(r'Tempo(s)')
+plt.ylabel(r'Energia(J)')
 
-plt.title(r'Pendulum For\c{c}ado Espa\c{c}o de Fases', fontsize=12)
+plt.title(r'Pendulum For\c{c}ado Energia', fontsize=12)
 plt.grid()
-plt.plot(thet,omega,'r-', linewidth=1, label="$\gamma=0,5$")
+plt.plot(t,energy,'r-', linewidth=1, label="$\gamma=0.5$")
 plt.legend(loc='upper right')
-plt.savefig("EP05.pdf", dpi=96)
+plt.savefig("ET05.pdf", dpi=96)
 plt.show()
